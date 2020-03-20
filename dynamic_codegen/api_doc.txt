@@ -1,0 +1,82 @@
+#Kết nối database
+HOST: 192.168.1.27
+DB: 
+----------Quản lý user-----------
+1. Thêm mới
+    ***Request 
+       - name: string(64)|required (Tên)
+       - age: int|required (Tuổi)
+       - email: string(64)|email|required (Địa chỉ email)
+       - image: object|Có các thuộc tính sau:
+            - name: string (Tên file)
+            - extension: string (Đuôi file)
+            - base64: string (nội dung file vs định dạng base64);
+    ***Response
+        - id: int (id sau khi thêm thành công)
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, thêm thất bại
+            1000: Thêm thành công
+        - message: (message thông báo)
+
+2. Lấy danh sách user
+    ***Request
+        - Không cần gửi kèm gì cả
+    ***Response
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, lấy danh sách thất bại
+            1000: Lấy danh sách thành công
+        - message: string (danh sách dạng chuỗi json trả về)
+3. Xóa user
+    ***Request
+        - id: int|required (id của user cần xóa)
+    ***Response 
+        - id: int (id của user được xóa)
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, lấy danh sách thất bại
+            1000: Xóa user thành công 
+        - message: (message thông báo)
+4. Lấy thông tin 1 user
+    ***Request
+        - id: int|required (id của user cần xóa)
+    ***Response 
+        - id: int (id của user được xóa)
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, lấy danh sách thất bại
+            1000: Xóa user thành công 
+        - message: (message thông báo)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------Quản lý Nhà phân phối-----------
+1. Thêm mới
+    ***Request 
+       - name: string(64)|required (Tên)
+       - age: int|required (Tuổi)
+       - email: string(64)|email|required (Địa chỉ email)
+       - image: object|Có các thuộc tính sau:
+            - name: string (Tên file)
+            - extension: string (Đuôi file)
+            - base64: string (nội dung file vs định dạng base
+    ***Response
+        - id: int (id sau khi thêm thành công)
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, thêm thất bại
+            1000: Thêm thành công
+        - message: (message thông báo)
+
+2. Lấy danh sách Nhà phân phối
+    ***Request
+        - Không cần gửi kèm gì cả
+    ***Response
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, lấy danh sách thất bại
+            1000: Lấy danh sách thành công
+        - message: string (danh sách Nhà phân phối dạng chuỗi json trả về)
+3. Xóa Nhà phân phối
+    ***Request
+        - id: int|required (id của Nhà phân phối cần xóa)
+    ***Response 
+        - id: int (id của Nhà phân phối được xóa)
+        - code: (mã code trạng thái trả về)
+            0: Xảy ra lỗi, lấy danh sách thất bại
+            1000: Xóa Nhà phân phối thành công 
+        - message: (message thông báo)
